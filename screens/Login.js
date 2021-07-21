@@ -36,7 +36,7 @@ import { Octicons, Fontisto, Ionicons } from '@expo/vector-icons';
 // keyboard avoiding view
 import KeyboardAvoidingWrapper from './../components/KeyboardAvoidingWrapper';
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [hidePassword, setHidePassword] = useState(true);
 
   return (
@@ -45,20 +45,21 @@ const Login = () => {
         <StatusBar style="dark" />
         <InnerContainer>
           <PageLogo resizeMode="cover" source={require('./../assets/img/expo-bg1.png')} />
-          <PageTitle>Flower Crib</PageTitle>
-          <SubTitle>Account Login</SubTitle>
+          <PageTitle>Posits-app</PageTitle>
+          <SubTitle>Login</SubTitle>
 
           <Formik
             initialValues={{ email: '', password: '' }}
             onSubmit={(values) => {
               console.log(values);
+              navigation.navigate('Welcome');
             }}
           >
             {({ handleChange, handleBlur, handleSubmit, values }) => (
               <StyledFormArea>
                 <MyTextInput
                   label="Email Address"
-                  placeholder="andyj@gmail.com"
+                  placeholder="emailj@gmail.com"
                   placeholderTextColor={darkLight}
                   onChangeText={handleChange('email')}
                   onBlur={handleBlur('email')}
@@ -90,7 +91,7 @@ const Login = () => {
                 </StyledButton>
                 <ExtraView>
                   <ExtraText>Don't have an account already? </ExtraText>
-                  <TextLink>
+                  <TextLink onPress={() => navigation.navigate('Signup')}>
                     <TextLinkContent>Signup</TextLinkContent>
                   </TextLink>
                 </ExtraView>

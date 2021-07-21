@@ -15,7 +15,7 @@ import {
   Colors,
 } from './../components/styles';
 
-const Welcome = () => {
+const Welcome = (navigation) => {
   return (
     <>
       <StatusBar style="light" />
@@ -23,16 +23,16 @@ const Welcome = () => {
         <WelcomeImage resizeMode="cover" source={require('./../assets/img/expo-bg2.png')} />
 
         <WelcomeContainer>
-          <PageTitle welcome={true}>Welcome! Buddy</PageTitle>
-          <SubTitle welcome={true}>Olga Simpson</SubTitle>
-          <SubTitle welcome={true}>olgasimp@gmail.com</SubTitle>
+          <PageTitle welcome={true}>Welcome!</PageTitle>
+          <SubTitle welcome={true}>user</SubTitle>
+          <SubTitle welcome={true}>user@gmail.com</SubTitle>
 
           <StyledFormArea>
             <Avatar resizeMode="cover" source={require('./../assets/img/expo-bg1.png')} />
 
             <Line />
-            <StyledButton onPress={() => {}}>
-              <ButtonText>Logout</ButtonText>
+            <StyledButton onPress={() => navigation.navigate('Home')}>
+              <ButtonText>Home</ButtonText>
             </StyledButton>
           </StyledFormArea>
         </WelcomeContainer>
