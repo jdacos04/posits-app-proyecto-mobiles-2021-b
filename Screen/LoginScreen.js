@@ -46,8 +46,9 @@ const LoginScreen = ({navigation}) => {
       formBody.push(encodedKey + '=' + encodedValue);
     }
     formBody = formBody.join('&');
-
-    fetch('http://192.168.1.108:4000/psignin', {
+        //'https://api-berserk.herokuapp.com/psignin'
+        //'http://192.168.1.108:4000/psignin'
+    fetch('https://api-berserk.herokuapp.com/psignin', {
       method: 'POST',
       body: formBody,
       headers: {

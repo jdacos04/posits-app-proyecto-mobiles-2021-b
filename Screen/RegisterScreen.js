@@ -63,8 +63,9 @@ const RegisterScreen = (props) => {
       formBody.push(encodedKey + '=' + encodedValue);
     }
     formBody = formBody.join('&');
-
-    fetch('http://192.168.1.108:4000/psignup', {
+      //'https://api-berserk.herokuapp.com/signin'
+      //'http://192.168.1.108:4000/psignup'
+    fetch('https://api-berserk.herokuapp.com/psignup', {
       method: 'POST',
       body: formBody,
       headers: {

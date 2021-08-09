@@ -1,4 +1,6 @@
-const API = "http://192.168.1.108:4000/notes";
+const API = 'https://api-berserk.herokuapp.com/notes';
+//'https://api-berserk.herokuapp.com/notes'
+//"http://192.168.1.108:4000/notes"
 const p="persona"
 export const deleteTask = async (id) => {
   await fetch(`${API}/${id}`, {

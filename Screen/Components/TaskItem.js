@@ -11,7 +11,7 @@ const TaskItem = ({ task, handleDelete }) => {
         onPress={() => navigation.navigate("TaskFormScreen", { id: task.id_notas})}
       >
         <Text style={styles.itemTitle}>{task.title}</Text>
-        <Text style={{ color: "#ffffff" }}>{task.des}</Text>
+        <Text style={{ color: "#ffffff" }}>{task.text}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={{ backgroundColor: "#ee5253", padding: 7, borderRadius: 5 }}
